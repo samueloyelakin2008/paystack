@@ -2,24 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paystack Payment</title>
   <style>
-    body { font-family: Arial; display: flex; flex-direction: column; align-items: center; margin-top: 50px; }
-    input, button { padding: 10px; margin: 5px; }
+    body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f4f4f9; }
+    .container { width: 90%; max-width: 400px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    h2 { text-align: center; color: #333; }
+    input, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+    button { background-color: #6c63ff; color: #fff; border: none; cursor: pointer; }
+    button:hover { background-color: #574bde; }
   </style>
 </head>
 <body>
 
+<div class="container">
 <h2>Paystack Payment</h2>
-
-<input type="email" id="email" placeholder="Email">
-<input type="number" id="amount" placeholder="Amount (₦)">
+<input type="email" id="email" placeholder="Email" required>
+<input type="number" id="amount" placeholder="Amount (₦)" required>
 <button id="payBtn">Pay Now</button>
+</div>
 
 <script>
 document.getElementById("payBtn").addEventListener("click", async () => {
   const email = document.getElementById("email").value;
   const amount = parseFloat(document.getElementById("amount").value);
+
+  if (!email || !amount) { alert('Please enter both email and amount'); return; }
 
   const response = await fetch("https://YOUR_RENDER_URL_HERE/api/pay", {
     method: "POST",
