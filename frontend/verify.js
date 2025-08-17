@@ -1,5 +1,5 @@
 // Reads ?reference=... and asks backend to verify
-const API_BASE = "https://your-app.onrender.com"; // same as in app.js
+const API_BASE = "https://paystack-ammn.onrender.com"; 
 
 function getQuery(name){
   const p = new URLSearchParams(location.search);
