@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paystack Checkout</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">PS</div>
+        <div class="brand-text">
+          <h1>Paystack Demo</h1>
+          <p class="muted">Secure checkout via Render backend</p>
+        </div>
+      </div>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="https://paystack.com" target="_blank" rel="noreferrer">Paystack</a>
+        <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <div class="card">
+        <h2 class="card-title">Pay with Paystack</h2>
+        <p class="muted">Enter your email and amount in NGN. You'll be redirected to Paystack's secure checkout.</p>
+
+        <form id="pay-form" class="form">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+
+          <label for="amount">Amount (NGN)</label>
+          <input id="amount" type="number" min="50" step="1" placeholder="2000" required>
+
+          <button type="submit" class="btn">Continue to Paystack</button>
+          <p id="status" class="status"></p>
+        </form>
+      </div>
+
+      <div class="card secondary">
+        <h3 class="card-title">How this works</h3>
+        <ol class="steps">
+          <li>Frontend (this page) is hosted on <strong>GitHub Pages</strong>.</li>
+          <li>When you click pay, we call the <strong>Render</strong> backend to create a transaction.</li>
+          <li>You are redirected to <strong>Paystack</strong> to complete payment.</li>
+          <li>Paystack notifies our backend via <strong>webhooks</strong>, and you return to a success page.</li>
+        </ol>
+        <div class="note">Tip: Update <code>API_BASE</code> in <code>app.js</code> to your Render URL.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> Paystack Demo — HTML/CSS/JS + Node/Express</p>
+      <div class="links">
+        <a href="./success.html">Success</a>
+        <a href="./cancel.html">Cancel</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
