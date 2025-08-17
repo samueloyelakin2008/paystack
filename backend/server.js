@@ -15,10 +15,9 @@ app.use(express.json({
 
 app.use(helmet());
 
-// CORS — set this to your GitHub Pages origin(s)
 const allowedOrigins = [
-  'https://<your-username>.github.io',
-  'https://<your-username>.github.io/<your-repo>',
+  'https://samueloyelakin2008.github.io',
+  'https://samueloyelakin2008.github.io/paystack',
 ];
 app.use(cors({
   origin: (origin, cb) => {
@@ -97,7 +96,6 @@ app.post('/api/paystack/webhook', (req, res) => {
 
     const event = req.body;
     // TODO: handle event.data.status === 'success' etc.
-    // e.g., update your database with event.data.reference
     console.log('Webhook event:', event?.event, event?.data?.reference);
 
     res.sendStatus(200);
