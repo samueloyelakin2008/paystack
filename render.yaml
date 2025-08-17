@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: paystack-backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    plan: free
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: PAYSTACK_SECRET_KEY
+        sync: false   
