@@ -18,11 +18,10 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify({
         email,
         amount,
-        currency: 'NGN',
-        // Optionally, set callback_url to success page on GitHub Pages
-        // callback_url: location.origin + location.pathname.replace(/\/[^/]*$/, '/success.html')
+        currency: 'NGN'
       })
     });
+
     const data = await res.json();
 
     if (!res.ok || !data?.status) {
