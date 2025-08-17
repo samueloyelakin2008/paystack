@@ -44,6 +44,7 @@ nav a:hover{opacity:1;text-decoration:underline}
 }
 @media (max-width: 900px){
   .grid{grid-template-columns: 1fr}
+  main{max-width:500px;
 }
 
 .card{
@@ -82,6 +83,9 @@ input:focus{border-color:#334155; box-shadow:0 0 0 3px rgba(51,65,85,.3)}
   font-weight:700;
   cursor:pointer;
   text-decoration:none;
+}
+main{
+  max-width:600px;
 }
 .btn:hover{filter:brightness(1.05)}
 .btn:active{transform:translateY(1px)}
