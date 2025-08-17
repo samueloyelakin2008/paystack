@@ -48,7 +48,6 @@ nav a:hover{opacity:1;text-decoration:underline}
 }
 
 .card{
-  max-width:600px;
   background:linear-gradient(180deg,rgba(11,18,32,.9),rgba(11,18,32,.7));
   border:1px solid var(--border);
   border-radius:20px;
