@@ -1,5 +1,5 @@
 // IMPORTANT: Set this to your Render backend URL
-const API_BASE = "https://your-app.onrender.com"; // e.g., https://paystack-demo.onrender.com
+const API_BASE = "https://paystack-ammn.onrender.com";
 
 const form = document.getElementById('pay-form');
 const statusEl = document.getElementById('status');
