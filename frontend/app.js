@@ -1,4 +1,3 @@
-// IMPORTANT: Set this to your Render backend URL
 const API_BASE = "https://paystack-ammn.onrender.com";
 
 const form = document.getElementById('pay-form');
